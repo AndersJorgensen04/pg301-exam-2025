@@ -1,0 +1,15 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "sam-39-analysis"
+resolve_s3 = true
+s3_prefix = "sam-39-analysis"
+region = "eu-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+parameter_overrides = "S3BucketName=\"kandidat-39-data\""
+image_repositories = []
+
+[default.global.parameters]
+region = "eu-west-1"
