@@ -14,8 +14,9 @@ on:
 
 jobs:
   deploy:
+    name: Deploy SAM Application
     runs-on: ubuntu-latest
-
+    if: github.event_name == 'push'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -39,6 +40,29 @@ jobs:
         working-directory: ./sam-comprehend
         run: |
           sam deploy \
-            --stack-name aialpha-sentiment-glennbech \
             --no-confirm-changeset \
             --no-fail-on-empty-changeset
+  sam-validate:
+    name: Validate SAM Template
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Set up SAM CLI
+        uses: aws-actions/setup-sam@v2
+
+      - name: Validate SAM template
+        run: sam validate
+        working-directory: ./sam-comprehend
+      
+      - name: SAM build
+        run: sam build
+        working-directory: ./sam-comprehend
+
