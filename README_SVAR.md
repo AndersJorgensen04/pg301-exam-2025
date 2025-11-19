@@ -14,4 +14,7 @@ Leveranser
         - Gjøre en pull request med endringer under sam-comprehend/ mappen
         - Merge PR til main for å kjøre deploy
 
+**Oppgave 3 - Del **: 
+    - link to dockerfile: https://github.com/AndersJorgensen04/pg301-exam-2025/blob/main/sentiment-docker/dockerfile
+
 ??? Postman endpoint: https://4hxekc4aud.execute-api.eu-west-1.amazonaws.com/Prod/analyze/
