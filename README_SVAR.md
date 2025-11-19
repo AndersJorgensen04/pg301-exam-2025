@@ -25,7 +25,7 @@ Leveranser
     - Hvordan teste workflowen: 
         1. Etter å ha forket repository mitt, Sørg for å lage en Docker Hub Access token https://hub.docker.com/signup \
         2. Gå til Settings -> Secrets and variables -> Actions -> New repository secret, og legg til "DOCKER_USERNAME" med ditt brukernavn og "DOCKERHUB_TOKEN" med token du lagde.\
-        3. gjør en endring i dockerfilen (f.eks legg til en tom linje), commit og så push til main
+        3. gjør en liten endring under mappen sentiment-docker (f.eks legg til en tom linje), commit og så push til main
         4. Se workflow i action :)
         5. Sjekk Docker Hub repository "navn/pg301-exam, da skal du kunne se den nye tagget sha-"832y941233323fg243234184"- lignende \
 ??? Postman endpoint: https://4hxekc4aud.execute-api.eu-west-1.amazonaws.com/Prod/analyze/
