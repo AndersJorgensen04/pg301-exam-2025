@@ -1,4 +1,4 @@
-name: Docker Build and Push image
+name: Docker Build and Push Docker image
 
 on:
   push:
@@ -30,4 +30,4 @@ jobs:
           file: ./sentiment-docker/dockerfile
           push: true
           tags: ${{secrets.DOCKER_USERNAME}}/pg301-exam:sha-${{ github.sha }}
-          
+
