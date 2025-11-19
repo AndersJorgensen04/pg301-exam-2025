@@ -13,3 +13,5 @@ Leveranser
         - Sette opp AWS credentials i github secrets
         - Gjøre en pull request med endringer under sam-comprehend/ mappen
         - Merge PR til main for å kjøre deploy
+
+??? Postman endpoint: https://4hxekc4aud.execute-api.eu-west-1.amazonaws.com/Prod/analyze/
