@@ -2,6 +2,11 @@ package com.aialpha.sentiment.metrics;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import io.micrometer.core.instrument.Counter;
+import io.micrometer.core.instrument.Timer;
+import io.micrometer.core.instrument.DistributionSummary;
+
+import java.time.Duration;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -29,6 +34,12 @@ public class SentimentMetrics {
 
     public void recordDuration(long milliseconds, String company, String model) {
         // TODO: Record timer
+        Timer.builder("sentiment.analysis.duration")
+                .tag("company", company)
+                .tag("model", model)
+                .description("Duration of sentiment analysis requests")
+                .register(meterRegistry)
+                .record(Duration.ofMillis(milliseconds));
     }
 
     public void recordCompaniesDetected(int count) {
@@ -37,5 +48,11 @@ public class SentimentMetrics {
 
     public void recordConfidence(double confidence, String sentiment, String company) {
         // TODO: Record distribution summary
+        DistributionSummary.builder("sentiment.analysis.confidence")
+                .tag("sentiment", sentiment)
+                .tag("company",company)
+                .description("Confidence scores for sentiment analysis")
+                .register(meterRegistry)
+                .record(confidence);
     }
 }
