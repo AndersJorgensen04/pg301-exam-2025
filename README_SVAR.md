@@ -33,4 +33,11 @@ Leveranser \
     - Screen shot av cloudwatch metrics-konsoll :![bilde av cloudwatch metrics-konsoll](image.png)  \
     - Forklaring: \ Jeg valgte å implementere DistribuitionSummary og  Timer som metrikkinstrumenter. Timer valgte jeg får å kunne se hvor for eksempel se hvor lang tid på gjennomsnitt et 'company' bruker på å bli behnadlet. \
     DistribuitionSummary er fint for å måle numeriske verdier for analyse, et godt eksempel er å se på confidence scores for hver enkelt selskap på snitt, og ut i fra det kan man vite om selskape har hatt gode eller vonde perioder. \  
+
+**Oppgave 4 - Del B **: \
+    - Jeg har laget en alarm som sjekker averag tid på response hos et spesefikt selskap, i dette tilfelle ville jeg holde øye med "Apple", det er fult mulig å gjøre dette med andre bedrifter også. det er bare å lage flere alarmer. Alarmen går når average response tid er over 2000 millisekunder. Dette kan gi praktisk informasjon om hvordan applikasjonen blir brukt. I dette tilfelle la jeg til en sleep funksjon i SentimentController.java, grunnet at det er vanskelig å trigge en slik alarm uten å gjøre en fake sleep for å øke response tiden. I produksjon ville man selvfølgelig ikke brukt det. I praksis kan en slik alarm gi informasjon om at analyser som handler om apple er flere eller generelt større og tar lengere tid og prossesere. \
+    - Screenshot av email notification: ![alt text](image-3.png) \
+    - Screenshot av alarm i dashboard: ![alt text](image-2.png) \
+    - Screenshot av dashboard med metrikk eksempel: ![alt text](image-4.png) \
+
 ??? Postman endpoint: https://4hxekc4aud.execute-api.eu-west-1.amazonaws.com/Prod/analyze/

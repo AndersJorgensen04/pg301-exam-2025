@@ -1,3 +1,4 @@
 .aws-sam/
 .aws-sam/*
 /target/
+infra-cloudwatch/terraform.tfvars
