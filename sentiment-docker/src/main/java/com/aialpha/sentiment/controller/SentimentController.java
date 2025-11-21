@@ -30,6 +30,9 @@ public class SentimentController {
     @PostMapping("/analyze")
     public ResponseEntity<SentimentResult> analyzeSentiment(@RequestBody AnalysisRequest request) {
         long startTime = System.currentTimeMillis();
+
+        try { Thread.sleep(3000); } catch (InterruptedException e) {}
+
         try {
             // Call Bedrock to analyze sentiment
             List<CompanySentiment> companies = bedrockService.analyzeSentiment(request.getText());
