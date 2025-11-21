@@ -2,9 +2,8 @@ Leveranser \
 **Oppgave 1**: workflow - https://github.com/AndersJorgensen04/pg301-exam-2025/blob/oppgave1/.github/workflows/terraform-s3.yml \
 
 **Opgave 2 - Del A**:  \
-    - Http endpoint for lambda funksjonen: https://github.com/AndersJorgensen04/pg301-exam-2025/blob/oppgave1/.github/workflows/terraform-s3.yml \
+    - Http endpoint for lambda funksjonen: https://4hxekc4aud.execute-api.eu-west-1.amazonaws.com/Prod/analyze/ \
     - Path til et lagret analyseresultat: https://eu-west-1.console.aws.amazon.com/s3/object/kandidat-39-data?region=eu-west-1&prefix=midlertidig/comprehend-20251118-163037-d5f28591.json \
-    ???  endpoint: https://4hxekc4aud.execute-api.eu-west-1.amazonaws.com/Prod/analyze/ \
 **Oppgave 2 - Del B**: \
     - SAM-workflow fil: https://github.com/AndersJorgensen04/pg301-exam-2025/blob/main/.github/workflows/sam-deploy.yml \
     - Succesful deploy: https://github.com/AndersJorgensen04/pg301-exam-2025/actions/runs/19482182277/job/55756081873 \
